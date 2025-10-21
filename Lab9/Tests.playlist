@@ -1,0 +1,322 @@
+<Playlist Version="2.0">
+  <Rule Name="Includes" Match="Any">
+    <Rule Match="All">
+      <Property Name="Solution" />
+      <Rule Match="Any">
+        <Rule Match="All">
+          <Property Name="Project" Value="Lab9.Tests" />
+          <Rule Match="Any">
+            <Rule Match="All">
+              <Property Name="Namespace" Value="Lab9.Tests" />
+              <Rule Match="Any">
+                <Rule Match="All">
+                  <Property Name="Class" Value="DiapasonArrayTests" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.DiapasonArrayTests.ArrayProperty_SetNull_ThrowsArgumentNullException" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonArrayTests.ArrayProperty_SetNull_ThrowsArgumentNullException" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.DiapasonArrayTests.ArrayProperty_SetValidArray_UpdatesCorrectly" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonArrayTests.ArrayProperty_SetValidArray_UpdatesCorrectly" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.DiapasonArrayTests.Constructor_Default_CreatesSingleElementArray" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonArrayTests.Constructor_Default_CreatesSingleElementArray" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.DiapasonArrayTests.Constructor_WithDiapasonArray_CreatesCorrectArray" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonArrayTests.Constructor_WithDiapasonArray_CreatesCorrectArray" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.DiapasonArrayTests.Constructor_WithInvalidAmount_ThrowsArgumentException" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonArrayTests.Constructor_WithInvalidAmount_ThrowsArgumentException(amount: -1)" />
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonArrayTests.Constructor_WithInvalidAmount_ThrowsArgumentException(amount: -5)" />
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonArrayTests.Constructor_WithInvalidAmount_ThrowsArgumentException(amount: 0)" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.DiapasonArrayTests.Constructor_WithNullArray_ThrowsArgumentNullException" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonArrayTests.Constructor_WithNullArray_ThrowsArgumentNullException" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.DiapasonArrayTests.Constructor_WithPositiveAmount_CreatesArrayWithRandomValues" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonArrayTests.Constructor_WithPositiveAmount_CreatesArrayWithRandomValues" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.DiapasonArrayTests.Indexer_GetInvalidIndex_ThrowsArgumentOutOfRangeException" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonArrayTests.Indexer_GetInvalidIndex_ThrowsArgumentOutOfRangeException(index: -1)" />
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonArrayTests.Indexer_GetInvalidIndex_ThrowsArgumentOutOfRangeException(index: 100)" />
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonArrayTests.Indexer_GetInvalidIndex_ThrowsArgumentOutOfRangeException(index: 2)" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.DiapasonArrayTests.Indexer_GetValidIndex_ReturnsCorrectElement" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonArrayTests.Indexer_GetValidIndex_ReturnsCorrectElement" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.DiapasonArrayTests.Indexer_SetInvalidIndex_ThrowsArgumentOutOfRangeException" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonArrayTests.Indexer_SetInvalidIndex_ThrowsArgumentOutOfRangeException(index: -1)" />
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonArrayTests.Indexer_SetInvalidIndex_ThrowsArgumentOutOfRangeException(index: 100)" />
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonArrayTests.Indexer_SetInvalidIndex_ThrowsArgumentOutOfRangeException(index: 2)" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.DiapasonArrayTests.Indexer_SetNull_ThrowsArgumentNullException" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonArrayTests.Indexer_SetNull_ThrowsArgumentNullException" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.DiapasonArrayTests.Indexer_SetValidIndex_UpdatesElement" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonArrayTests.Indexer_SetValidIndex_UpdatesElement" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.DiapasonArrayTests.LengthProperty_ReturnsCorrectLength" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonArrayTests.LengthProperty_ReturnsCorrectLength" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.DiapasonArrayTests.ObjectCount_IncrementsOnEachCreation" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonArrayTests.ObjectCount_IncrementsOnEachCreation" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.DiapasonArrayTests.ToString_EmptyArray_ReturnsCorrectFormat" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonArrayTests.ToString_EmptyArray_ReturnsCorrectFormat" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.DiapasonArrayTests.ToString_MultipleElements_ReturnsCorrectFormat" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonArrayTests.ToString_MultipleElements_ReturnsCorrectFormat" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.DiapasonArrayTests.ToString_SingleElement_ReturnsCorrectFormat" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonArrayTests.ToString_SingleElement_ReturnsCorrectFormat" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="DiapasonTests" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.DiapasonTests.AdditionOperator_AddsValueToBothEnds" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonTests.AdditionOperator_AddsValueToBothEnds" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.DiapasonTests.Constructor_Default_CreatesZeroRange" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonTests.Constructor_Default_CreatesZeroRange" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.DiapasonTests.Constructor_WithParameters_CreatesCorrectRange" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonTests.Constructor_WithParameters_CreatesCorrectRange" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.DiapasonTests.Constructor_WithReversedParameters_SwapsValues" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonTests.Constructor_WithReversedParameters_SwapsValues" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.DiapasonTests.DecrementOperator_DecreasesBothValues" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonTests.DecrementOperator_DecreasesBothValues" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.DiapasonTests.End_SetValueLessThanStart_SwapsValues" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonTests.End_SetValueLessThanStart_SwapsValues" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.DiapasonTests.ExplicitCastToInt_ReturnsStartAsInt" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonTests.ExplicitCastToInt_ReturnsStartAsInt" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.DiapasonTests.GetRangeBorders_ReturnsCorrectValues" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonTests.GetRangeBorders_ReturnsCorrectValues" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.DiapasonTests.GreaterThanOperator_ChecksValueNotInRange" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonTests.GreaterThanOperator_ChecksValueNotInRange(value: 0, expected: True)" />
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonTests.GreaterThanOperator_ChecksValueNotInRange(value: 1, expected: False)" />
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonTests.GreaterThanOperator_ChecksValueNotInRange(value: 3, expected: False)" />
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonTests.GreaterThanOperator_ChecksValueNotInRange(value: 4, expected: False)" />
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonTests.GreaterThanOperator_ChecksValueNotInRange(value: 5, expected: True)" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.DiapasonTests.ImplicitCastToDouble_ReturnsEndAsDouble" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonTests.ImplicitCastToDouble_ReturnsEndAsDouble" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.DiapasonTests.IncrementOperator_IncreasesBothValues" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonTests.IncrementOperator_IncreasesBothValues" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.DiapasonTests.IsInRange_ReturnsCorrectResult" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonTests.IsInRange_ReturnsCorrectResult(value: 0, expected: False)" />
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonTests.IsInRange_ReturnsCorrectResult(value: 1, expected: False)" />
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonTests.IsInRange_ReturnsCorrectResult(value: 2, expected: True)" />
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonTests.IsInRange_ReturnsCorrectResult(value: 5, expected: True)" />
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonTests.IsInRange_ReturnsCorrectResult(value: 8, expected: True)" />
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonTests.IsInRange_ReturnsCorrectResult(value: 9, expected: False)" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.DiapasonTests.LengthOperator_ReturnsCorrectLength" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonTests.LengthOperator_ReturnsCorrectLength" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.DiapasonTests.LessThanOperator_ChecksValueInRange" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonTests.LessThanOperator_ChecksValueInRange(value: 0, expected: False)" />
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonTests.LessThanOperator_ChecksValueInRange(value: 1, expected: True)" />
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonTests.LessThanOperator_ChecksValueInRange(value: 3, expected: True)" />
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonTests.LessThanOperator_ChecksValueInRange(value: 4, expected: True)" />
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonTests.LessThanOperator_ChecksValueInRange(value: 5, expected: False)" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.DiapasonTests.ObjectCount_IncrementsOnEachCreation" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonTests.ObjectCount_IncrementsOnEachCreation" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.DiapasonTests.Start_SetValueGreaterThanEnd_SwapsValues" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonTests.Start_SetValueGreaterThanEnd_SwapsValues" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.DiapasonTests.ToString_ReturnsCorrectFormat" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.DiapasonTests.ToString_ReturnsCorrectFormat" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="InterfaceTests" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.InterfaceTests.CreateDiapasonManually_InvalidEndInput_ReturnsNull" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.InterfaceTests.CreateDiapasonManually_InvalidEndInput_ReturnsNull" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.InterfaceTests.CreateDiapasonManually_InvalidStartInput_ReturnsNull" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.InterfaceTests.CreateDiapasonManually_InvalidStartInput_ReturnsNull" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.InterfaceTests.CreateDiapasonManually_ValidInput_ReturnsDiapason" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.InterfaceTests.CreateDiapasonManually_ValidInput_ReturnsDiapason" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.InterfaceTests.CreateManualArray_InvalidCountInput_ReturnsNull" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.InterfaceTests.CreateManualArray_InvalidCountInput_ReturnsNull" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.InterfaceTests.CreateManualArray_InvalidDiapasonInput_ReturnsNull" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.InterfaceTests.CreateManualArray_InvalidDiapasonInput_ReturnsNull" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.InterfaceTests.FindMaxDiapason_WithEqualLengths_ReturnsFirstMax" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.InterfaceTests.FindMaxDiapason_WithEqualLengths_ReturnsFirstMax" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.InterfaceTests.FindMaxDiapason_WithNullArray_ThrowsArgumentException" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.InterfaceTests.FindMaxDiapason_WithNullArray_ThrowsArgumentException" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.InterfaceTests.FindMaxDiapason_WithSingleElement_ReturnsThatElement" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.InterfaceTests.FindMaxDiapason_WithSingleElement_ReturnsThatElement" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.InterfaceTests.FindMaxDiapason_WithValidArray_ReturnsMaxDiapason" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.InterfaceTests.FindMaxDiapason_WithValidArray_ReturnsMaxDiapason" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="Tests" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Lab9.Tests.Tests.ObjectCount_IntegrationTest" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Lab9.Tests.Tests.ObjectCount_IntegrationTest" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+              </Rule>
+            </Rule>
+          </Rule>
+        </Rule>
+      </Rule>
+    </Rule>
+  </Rule>
+</Playlist>
