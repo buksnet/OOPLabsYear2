@@ -1,0 +1,99 @@
+﻿namespace Trials
+{
+    public class Exam : Test, IInit, ICloneable
+    {
+
+        private string subject;
+
+        public string Subject
+        {
+            get { return subject; }
+            set
+            {
+                if (!string.IsNullOrWhiteSpace(value))
+                    subject = value;
+                else
+                    subject = "Другой экзамен";
+            }
+        }
+
+        // Конструкторы
+        public Exam()
+        {
+            this.Name = "Экзамен";
+            this.Duration = 90; // значения по умолчанию
+            this.QuestionCount = 30;
+            this.subject = "Другой экзамен";
+        }
+
+        public Exam(string name, int duration, int questionCount, string subject)
+        {
+            this.Name = name;    // используем свойство для валидации
+            this.Duration = duration;
+            this.QuestionCount = questionCount;
+            this.subject = subject;
+        }
+
+        public Exam(Exam exam)
+        {
+            this.Name = exam.Name;
+            this.Duration = exam.Duration;
+            this.QuestionCount = exam.QuestionCount;
+            this.subject = exam.Subject;
+        }
+
+        // Методы
+        public virtual void Init(string name, int duration, int questionCount, string subject)
+        {
+            this.Name = name;
+            this.Duration = duration;
+            this.QuestionCount = questionCount;
+            this.Subject = subject;
+        }
+
+        public override void RandomInit()
+        {
+            var rng = new Random();
+            string[] names = {"Экзамен", "Зачёт", "Дифф. Зачёт"};
+            string[] subjects = { "Математика", "Физика", "Информатика", "Русский язык", "История" };
+
+            this.Name = names[rng.Next(names.Length)];
+            this.Duration = rng.Next(30, 361); // от 30 до 360 минут
+            this.QuestionCount = rng.Next(30, 80);
+            this.Subject = subjects[rng.Next(subjects.Length)];
+        }
+
+        public override void Show()
+        {
+            Console.WriteLine($"[Экзамен]: {Name} по предмету {Subject}, длительность: {Duration} мин., число вопросов: {QuestionCount}.");
+        }
+
+        // Метод Equals (требование задания)
+        public override bool Equals(object obj)
+        {
+            if (obj is Exam other)
+            {
+                return Name == other.Name && Duration == other.Duration && QuestionCount == other.QuestionCount && Subject == other.Subject;
+            }
+            return false;
+        }
+
+        // Для работы с коллекциями
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Name, Duration, QuestionCount, Subject);
+        }
+
+        public override object Clone()
+        {
+            var clone = new Exam
+            {
+                Name = Name,
+                Duration = Duration,
+                QuestionCount = QuestionCount,
+                Subject = Subject
+            };
+            return clone;
+        }
+    }
+}
