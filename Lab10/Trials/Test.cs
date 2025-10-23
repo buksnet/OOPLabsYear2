@@ -77,15 +77,14 @@
             return HashCode.Combine(Name, Duration, QuestionCount);
         }
 
-        public override object Clone()
+        public new object Clone()
         {
-            var clone = new Test
+            return new Test
             {
-                Name = Name,
-                Duration = Duration,
-                QuestionCount = QuestionCount
+                Name = this.Name,
+                Duration = this.Duration,
+                QuestionCount = this.QuestionCount
             };
-            return clone;
         }
     }
 }

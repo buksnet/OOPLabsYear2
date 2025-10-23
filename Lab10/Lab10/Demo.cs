@@ -6,6 +6,8 @@ namespace Lab10
     {
         public static void DemonstrateBinarySearch(Trial[] trials)
         {
+            var comparer = new NameComparer(); // компаратор по имени
+
             Console.WriteLine("\n=== ДЕМОНСТРАЦИЯ БИНАРНОГО ПОИСКА ===");
             Console.WriteLine($"Размер массива: {trials.Length} элементов");
             Console.WriteLine($"Теоретическое максимальное число шагов: {Math.Ceiling(Math.Log2(trials.Length))}");
@@ -19,39 +21,39 @@ namespace Lab10
             Console.WriteLine($"\n   а) Поиск первого элемента:");
             Console.Write("   ");
             trials[0].Show();
-            int firstIndex = BinarySearchWithSteps(trials, trials[0], out int firstSteps);
-            Console.WriteLine($"    Найден на позиции {firstIndex} за {firstSteps} шагов");
+            int firstIndex = Array.BinarySearch(trials, trials[0], comparer);
+            Console.WriteLine($"    Найден на позиции {firstIndex}");
 
             // Последний элемент (тоже должен найтись быстро)
             Console.WriteLine($"\n   б) Поиск последнего элемента:");
             Console.Write("   ");
             trials[trials.Length - 1].Show();
-            int lastIndex = BinarySearchWithSteps(trials, trials[trials.Length - 1], out int lastSteps);
-            Console.WriteLine($"    Найден на позиции {lastIndex} за {lastSteps} шагов");
+            int lastIndex = Array.BinarySearch(trials, trials[trials.Length - 1], comparer);
+            Console.WriteLine($"    Найден на позиции {lastIndex}");
 
             // Средний элемент (скорее всего найдет за 1 шаг!)
             Console.WriteLine($"\n   в) Поиск среднего элемента:");
             int middlePos = trials.Length / 2;
             Console.Write("   ");
             trials[middlePos].Show();
-            int middleIndex = BinarySearchWithSteps(trials, trials[middlePos], out int middleSteps);
-            Console.WriteLine($"    Найден на позиции {middleIndex} за {middleSteps} шагов");
+            int middleIndex = Array.BinarySearch(trials, trials[middlePos], comparer);
+            Console.WriteLine($"    Найден на позиции {middleIndex}");
 
             // Элемент на позиции 1/4 (должен найтись за меньше шагов)
             Console.WriteLine($"\n   г) Поиск элемента на позиции 1/4:");
             int quarterPos = trials.Length / 4;
             Console.Write("   ");
             trials[quarterPos].Show();
-            int quarterIndex = BinarySearchWithSteps(trials, trials[quarterPos], out int quarterSteps);
-            Console.WriteLine($"    Найден на позиции {quarterIndex} за {quarterSteps} шагов");
+            int quarterIndex = Array.BinarySearch(trials, trials[quarterPos], comparer);
+            Console.WriteLine($"    Найден на позиции {quarterIndex}");
 
             // Элемент на позиции 3/4 (тоже должен найтись быстро)
             Console.WriteLine($"\n   д) Поиск элемента на позиции 3/4:");
             int threeQuarterPos = 3 * trials.Length / 4;
             Console.Write("   ");
             trials[threeQuarterPos].Show();
-            int threeQuarterIndex = BinarySearchWithSteps(trials, trials[threeQuarterPos], out int threeQuarterSteps);
-            Console.WriteLine($"    Найден на позиции {threeQuarterIndex} за {threeQuarterSteps} шагов");
+            int threeQuarterIndex = Array.BinarySearch(trials, trials[threeQuarterPos], comparer);
+            Console.WriteLine($"    Найден на позиции {threeQuarterIndex}");
 
             // 2. Поиск случайных элементов из массива
             Console.WriteLine("\n2. Поиск случайных элементов из массива:");
@@ -63,8 +65,8 @@ namespace Lab10
                 Console.WriteLine($"\n   Случайный элемент #{i + 1}:");
                 Console.Write("   ");
                 trials[randomPos].Show();
-                int randomIndex = BinarySearchWithSteps(trials, trials[randomPos], out int randomSteps);
-                Console.WriteLine($"    Найден на позиции {randomIndex} за {randomSteps} шагов");
+                int randomIndex = Array.BinarySearch(trials, trials[randomPos], comparer);
+                Console.WriteLine($"    Найден на позиции {randomIndex}");
             }
 
             // 3. Поиск элементов разных типов с разной сложностью
@@ -75,14 +77,14 @@ namespace Lab10
             Console.WriteLine($"\n   а) Поиск простого Trial:");
             Console.Write("   ");
             simpleTrial.Show();
-            int trialIndex = BinarySearchWithSteps(trials, simpleTrial, out int trialSteps);
-            if (trialIndex != -1)
+            int trialIndex = Array.BinarySearch(trials, simpleTrial, comparer);
+            if (trialIndex >= 0)
             {
-                Console.WriteLine($"    Найден на позиции {trialIndex} за {trialSteps} шагов");
+                Console.WriteLine($"    Найден на позиции {trialIndex}");
             }
             else
             {
-                Console.WriteLine($"    Не найден (за {trialSteps} шагов)");
+                Console.WriteLine($"Не найден");
             }
 
             // Ищем государственный экзамен (скорее всего в начале массива)
@@ -90,18 +92,18 @@ namespace Lab10
             Console.WriteLine($"\n   б) Поиск государственного экзамена:");
             Console.Write("   ");
             stateExam.Show();
-            int stateIndex = BinarySearchWithSteps(trials, stateExam, out int stateSteps);
-            if (stateIndex != -1)
+            int stateIndex = Array.BinarySearch(trials, stateExam, comparer);
+            if (stateIndex >= 0)
             {
-                Console.WriteLine($"    Найден на позиции {stateIndex} за {stateSteps} шагов");
+                Console.WriteLine($"    Найден на позиции {stateIndex}");
             }
             else
             {
-                Console.WriteLine($"    Не найден (за {stateSteps} шагов)");
+                Console.WriteLine($"    Не найден");
             }
 
-            // 4. Демонстрация "пограничных" случаев
-            Console.WriteLine("\n4. Пограничные случаи:");
+            // 4. Демонстрация граничных случаев
+            Console.WriteLine("\n4. Граничные случаи:");
 
             // Поиск элемента, который может быть между двумя существующими
             if (trials.Length > 1)
@@ -116,8 +118,8 @@ namespace Lab10
                 Console.WriteLine($"\n   а) Поиск несуществующего элемента между двумя существующими:");
                 Console.Write("   ");
                 betweenTrial.Show();
-                int betweenIndex = BinarySearchWithSteps(trials, betweenTrial, out int betweenSteps);
-                Console.WriteLine($"    Не найден (за {betweenSteps} шагов) - как и ожидалось");
+                int betweenIndex = Array.BinarySearch(trials, betweenTrial, comparer);
+                Console.WriteLine($"    Не найден - как и ожидалось");
             }
 
             // 5. Анализ эффективности
@@ -133,33 +135,6 @@ namespace Lab10
                 Console.WriteLine("\n6. Визуализация дерева поиска:");
                 VisualizeSearchTree(trials);
             }
-        }
-
-        // Метод бинарного поиска с подсчетом шагов
-        private static int BinarySearchWithSteps(Trial[] array, Trial target, out int steps)
-        {
-            steps = 0;
-            if (array == null || array.Length == 0)
-                return -1;
-
-            int left = 0;
-            int right = array.Length - 1;
-
-            while (left <= right)
-            {
-                steps++;
-                int mid = left + (right - left) / 2;
-                int comparison = array[mid].CompareTo(target);
-
-                if (comparison == 0)
-                    return mid;
-                else if (comparison < 0)
-                    left = mid + 1;
-                else
-                    right = mid - 1;
-            }
-
-            return -1;
         }
 
         // Визуализация дерева поиска (для маленьких массивов)

@@ -3,7 +3,7 @@
     public class FinalExam : Exam, IInit, ICloneable
     {
 
-        private bool isStateExam; // Гос. экзамен?
+        private bool isStateExam; // флаг - Гос. экзамен
 
         public bool IsStateExam
         {
@@ -76,7 +76,6 @@
             }
         }
 
-        // Метод Equals (требование задания)
         public override bool Equals(object obj)
         {
             if (obj is FinalExam other)
@@ -92,17 +91,16 @@
             return HashCode.Combine(Name, Duration, QuestionCount, Subject, IsStateExam);
         }
 
-        public override object Clone()
+        public new object Clone()
         {
-            var clone = new FinalExam
+            return new FinalExam
             {
-                Name = Name,
-                Duration = Duration,
-                QuestionCount = QuestionCount,
-                Subject = Subject,
-                IsStateExam = IsStateExam
+                Name = this.Name,
+                Duration = this.Duration,
+                QuestionCount = this.QuestionCount,
+                Subject = this.Subject,
+                IsStateExam = this.IsStateExam
             };
-            return clone;
         }
     }
 }

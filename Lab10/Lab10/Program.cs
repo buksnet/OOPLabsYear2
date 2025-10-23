@@ -4,7 +4,7 @@ namespace Lab10
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static void Main()
         {
             Trial[] trials = new Trial[30];
             var rng = new Random();
@@ -31,9 +31,19 @@ namespace Lab10
                 trials[i].Show();
             }
 
-            Array.Sort(trials);
+            var nameComparer = new NameComparer();
+            
+            Console.WriteLine("\nОтсортированный по имени массив:");
 
-            Console.WriteLine("\nОтсортированный массив:");
+            Array.Sort(trials, nameComparer);
+            foreach (var trial in trials)
+            {
+                trial.Show();
+            }
+
+            Console.WriteLine("\nОтсортированный по 'важности' массив:");
+
+            Array.Sort(trials);
             foreach (var trial in trials)
             {
                 trial.Show();

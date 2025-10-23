@@ -2,7 +2,7 @@
 
 namespace Trials
 {
-    public class Trial: IInit, ICloneable, IComparable<Trial>, IComparer
+    public class Trial: IInit, ICloneable, IComparable<Trial>
     {
         private string name;
         private int duration;
@@ -52,7 +52,8 @@ namespace Trials
 
         public void Init()
         {
-            this.RandomInit();
+            this.Name = "Вступительное испытание N";
+            this.duration = 0;
         }
 
         // Методы
@@ -76,7 +77,7 @@ namespace Trials
             Console.WriteLine($"[Испытание]: {Name}, длительность: {Duration} мин.");
         }
 
-        // Метод Equals (требование задания)
+
         public override bool Equals(object? obj)
         {
             if (obj is null) return false;
@@ -88,7 +89,7 @@ namespace Trials
             return false;
         }
 
-        // Для работы с коллекциями
+        // Для работы с коллекциями (напр. Hashtable)
         public override int GetHashCode()
         {
             return HashCode.Combine(Name, Duration);
@@ -129,53 +130,19 @@ namespace Trials
             };
         }
 
-        // Реализация IComparer
-        public int Compare(object? x, object? y)
+        public object Clone()
         {
-            if (x is Trial trial1 && y is Trial trial2)
+            return new Trial
             {
-                return trial1.CompareTo(trial2);
-            }
-            return 0;
+                Name = this.Name,
+                Duration = this.Duration
+            };
         }
 
-        public virtual object Clone()
+        // копирует ВСЕ нестатические поля объекта и добавляет их в новый объект
+        public object ShallowCopy()
         {
-            var clone = new Trial();
-            clone.Name = Name;
-            clone.Duration = Duration;
-            return clone;
-        }
-
-        public static int BinarySearch(Trial[] array, Trial target)
-        {
-            if (array == null || array.Length == 0)
-                return -1;
-
-            int left = 0;
-            int right = array.Length - 1;
-
-            while (left <= right)
-            {
-                int mid = left + (right - left) / 2;
-                int comparison = array[mid].CompareTo(target);
-
-                if (comparison == 0)
-                    return mid; // Найден
-                else if (comparison < 0)
-                    left = mid + 1; // Искомый элемент справа
-                else
-                    right = mid - 1; // Искомый элемент слева
-            }
-
-            return -1; // Не найден
-        }
-
-        // Перегруженный метод для поиска по критериям
-        public static int BinarySearch(Trial[] array, string name, int duration)
-        {
-            var temp = new Trial(name, duration);
-            return BinarySearch(array, temp);
+            return (Trial)this.MemberwiseClone();
         }
     }
 }
