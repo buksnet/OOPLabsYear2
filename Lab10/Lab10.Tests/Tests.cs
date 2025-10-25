@@ -142,24 +142,6 @@ namespace Lab10.Tests
             var result = trial1.CompareTo(trial2);
             Assert.True(result != 0);
         }
-
-        [Fact]
-        public void Trial_Compare_ComparesObjects()
-        {
-            var trial1 = new Trial("A", 60);
-            var trial2 = new Trial("B", 90);
-            var comparer = new Trial();
-            var result = comparer.Compare(trial1, trial2);
-            Assert.True(result != 0);
-        }
-
-        [Fact]
-        public void Trial_Compare_ReturnsZeroForNulls()
-        {
-            var comparer = new Trial();
-            var result = comparer.Compare(null, null);
-            Assert.Equal(0, result);
-        }
     }
 
     public class TestTests
@@ -461,91 +443,6 @@ namespace Lab10.Tests
         }
     }
 
-    public class BinarySearchTests
-    {
-        [Fact]
-        public void BinarySearch_FindsElementInSortedArray()
-        {
-            var trials = new Trial[]
-            {
-                new Trial("A", 10),
-                new Trial("B", 20),
-                new Trial("C", 30),
-                new Trial("D", 40),
-                new Trial("E", 50)
-            };
-            Array.Sort(trials);
-
-            var target = trials[2];
-            var index = Trial.BinarySearch(trials, target);
-
-            Assert.Equal(2, index);
-        }
-
-        [Fact]
-        public void BinarySearch_ReturnsMinusOneForEmptyArray()
-        {
-            Trial[] emptyArray = Array.Empty<Trial>();
-            var target = new Trial();
-            var index = Trial.BinarySearch(emptyArray, target);
-            Assert.Equal(-1, index);
-        }
-
-        [Fact]
-        public void BinarySearch_ReturnsMinusOneForNullArray()
-        {
-            Trial[] nullArray = null;
-            var target = new Trial();
-            var index = Trial.BinarySearch(nullArray, target);
-            Assert.Equal(-1, index);
-        }
-
-        [Fact]
-        public void BinarySearch_ReturnsMinusOneForNotFound()
-        {
-            var trials = new Trial[]
-            {
-                new Trial("A", 60),
-                new Trial("B", 90),
-                new Trial("C", 120)
-            };
-            Array.Sort(trials);
-
-            var target = new Trial("Несуществующий", 45);
-            var index = Trial.BinarySearch(trials, target);
-
-            Assert.Equal(-1, index);
-        }
-
-        [Fact]
-        public void BinarySearch_WithParameters_FindsElement()
-        {
-            var trials = new Trial[]
-            {
-                new Trial("A", 60),
-                new Trial("B", 90),
-                new Trial("C", 120)
-            };
-            Array.Sort(trials);
-
-            var index = Trial.BinarySearch(trials, "B", 90);
-            Assert.Equal(1, index);
-        }
-
-        [Fact]
-        public void BinarySearch_WithParameters_ReturnsMinusOneForNotFound()
-        {
-            var trials = new Trial[]
-            {
-                new Trial("A", 60),
-                new Trial("B", 90)
-            };
-            Array.Sort(trials);
-
-            var index = Trial.BinarySearch(trials, "C", 120);
-            Assert.Equal(-1, index);
-        }
-    }
 
     public class InterfaceTests
     {

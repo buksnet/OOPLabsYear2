@@ -41,18 +41,18 @@
         // Методы
         public virtual void Init(string name, int duration, int questionCount) 
         {
-            this.Name = name;
-            this.Duration = duration;
+            // Здесь и далее по иерархии - используется для избегания повторения кода
+            // Использует родительский метод заполнения в качестве части инициализации
+            base.Init(name, duration);
             this.QuestionCount = questionCount;
         }
 
         public override void RandomInit()
         {
             var rng = new Random();
-            string[] names = { "Экзамен", "Зачёт", "Дифф. Зачёт" };
+            
+            base.RandomInit();
 
-            this.Name = names[rng.Next(names.Length)];
-            this.Duration = rng.Next(30, 181); // от 30 до 180 минут
             this.QuestionCount = rng.Next(5, 35);
         }
 
@@ -77,6 +77,7 @@
             return HashCode.Combine(Name, Duration, QuestionCount);
         }
 
+        // Для IClonable
         public new object Clone()
         {
             return new Test

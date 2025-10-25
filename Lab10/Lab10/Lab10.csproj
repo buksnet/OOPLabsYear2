@@ -8,17 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Trials.dll" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Reference Include="Trials">
       <HintPath>..\Trials\bin\Debug\net9.0\Trials.dll</HintPath>
     </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="Trials.dll" />
   </ItemGroup>
 
 </Project>

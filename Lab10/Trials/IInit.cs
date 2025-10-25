@@ -8,6 +8,7 @@
         void Show();
     }
 
+    // Для IClonable
     public interface ICloneable
     {
         object Clone();

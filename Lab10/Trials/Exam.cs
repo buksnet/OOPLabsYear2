@@ -45,21 +45,17 @@
         // Методы
         public virtual void Init(string name, int duration, int questionCount, string subject)
         {
-            this.Name = name;
-            this.Duration = duration;
-            this.QuestionCount = questionCount;
+            base.Init(name, duration, questionCount);
             this.Subject = subject;
         }
 
         public override void RandomInit()
         {
             var rng = new Random();
-            string[] names = {"Экзамен", "Зачёт", "Дифф. Зачёт"};
+
             string[] subjects = { "Математика", "Физика", "Информатика", "Русский язык", "История" };
 
-            this.Name = names[rng.Next(names.Length)];
-            this.Duration = rng.Next(30, 361); // от 30 до 360 минут
-            this.QuestionCount = rng.Next(30, 80);
+            base.RandomInit();
             this.Subject = subjects[rng.Next(subjects.Length)];
         }
 
@@ -84,6 +80,7 @@
             return HashCode.Combine(Name, Duration, QuestionCount, Subject);
         }
 
+        // Для IClonable
         public new object Clone()
         {
             return new Exam

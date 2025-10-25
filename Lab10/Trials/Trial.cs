@@ -69,7 +69,7 @@ namespace Trials
             string[] names = { "Экзамен", "Зачёт", "Дифф. Зачёт" };
 
             this.Name = names[rng.Next(names.Length)];
-            this.Duration = rng.Next(30, 181); // от 30 до 180 минут
+            this.Duration = rng.Next(30, 361); // от 30 до 360 минут
         }
 
         public virtual void Show()
@@ -130,6 +130,7 @@ namespace Trials
             };
         }
 
+        // Для IClonable
         public object Clone()
         {
             return new Trial
@@ -140,7 +141,7 @@ namespace Trials
         }
 
         // копирует ВСЕ нестатические поля объекта и добавляет их в новый объект
-        public object ShallowCopy()
+        public virtual object ShallowCopy()
         {
             return (Trial)this.MemberwiseClone();
         }

@@ -43,24 +43,17 @@
         // Методы
         public void Init(string name, int duration, int questionCount, string subject, bool isStateExam)
         {
-            this.Name = name;
-            this.Duration = duration;
-            this.QuestionCount = questionCount;
-            this.Subject = subject;
+            base.Init();
             this.isStateExam = isStateExam;
         }
 
         public override void RandomInit()
         {
             var rng = new Random();
-            string[] names = { "Экзамен", "Зачёт", "Дифф. Зачёт" };
-            string[] subjects = { "Математика", "Физика", "Информатика", "Русский язык", "История" };
 
-            this.Name = names[rng.Next(names.Length)];
-            this.Duration = rng.Next(30, 361); // от 30 до 360 минут
-            this.QuestionCount = rng.Next(30, 80);
-            this.Subject = subjects[rng.Next(subjects.Length)];
-            this.isStateExam = rng.Next(0, 2) > 0; // случайное boolean значение (50/50
+            base.RandomInit();
+
+            this.isStateExam = rng.Next(0, 2) > 0; // случайное boolean значение (50/50)
         }
 
         public override void Show()
@@ -91,6 +84,7 @@
             return HashCode.Combine(Name, Duration, QuestionCount, Subject, IsStateExam);
         }
 
+        // Для IClonable
         public new object Clone()
         {
             return new FinalExam

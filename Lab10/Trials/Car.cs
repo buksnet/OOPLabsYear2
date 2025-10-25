@@ -2,12 +2,56 @@
 {
     public class Car : IInit, System.ICloneable
     {
-        public string Brand { get; set; }
-        public int Year { get; set; }
-        public double Price { get; set; }
+        private string brand;
+        private int year;
+        public double price;
+
+        public string Brand { 
+            get {
+                return brand;
+            }
+            set {
+                if (value is not null)
+                {
+                    brand = value;
+                }
+            } 
+        }
+
+        public int Year
+        {
+            get
+            {
+                return year;
+            }
+            set
+            {
+                if (3000 > value && value > 1900)
+                {
+                    year = value;
+                }
+            }
+        }
+        public double Price { get
+            {
+                return price;
+            }
+            set
+            {
+                if (value > 0)
+                {
+                    price = value;
+                }
+            }
+        }
 
         // Конструкторы
-        public Car() { }
+        public Car() {
+            brand = "Игрушечная машинка";
+            year = 2025;
+            price = 85.9;
+        }
+
         public Car(string brand, int year, double price)
         {
             Brand = brand;
@@ -19,11 +63,18 @@
         public void Init()
         {
             Console.Write("Введите марку автомобиля: ");
-            Brand = Console.ReadLine();
-            Console.Write("Введите год выпуска: ");
-            Year = int.Parse(Console.ReadLine());
-            Console.Write("Введите цену: ");
-            Price = double.Parse(Console.ReadLine());
+            try
+            {
+                Brand = Console.ReadLine();
+                Console.Write("Введите год выпуска: ");
+                Year = int.Parse(Console.ReadLine());
+                Console.Write("Введите цену: ");
+                Price = double.Parse(Console.ReadLine());
+            }
+            catch
+            {
+                Console.WriteLine("Ошибка ввода. Убедитесь, что вы вводите значения корректно!");
+            }
         }
 
         public void RandomInit()
@@ -40,7 +91,7 @@
             Console.WriteLine($"[Автомобиль]: {Brand}, {Year} год, цена: {Price} руб.");
         }
 
-        // Реализация ICloneable
+        // Для IClonable
         public object Clone()
         {
             return new Car(Brand, Year, Price); // глубокое копирование
