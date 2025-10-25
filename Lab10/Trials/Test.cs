@@ -53,7 +53,7 @@
             
             base.RandomInit();
 
-            this.QuestionCount = rng.Next(5, 35);
+            this.QuestionCount = rng.Next(5, 101);
         }
 
         public override void Show()

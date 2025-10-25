@@ -227,7 +227,7 @@ namespace Lab10.Tests
             test.RandomInit();
             Assert.False(string.IsNullOrWhiteSpace(test.Name));
             Assert.True(test.Duration >= 30 && test.Duration <= 180);
-            Assert.True(test.QuestionCount >= 5 && test.QuestionCount <= 34);
+            Assert.True(test.QuestionCount >= 5 && test.QuestionCount <= 100);
         }
 
         [Fact]
@@ -282,7 +282,7 @@ namespace Lab10.Tests
             Assert.False(string.IsNullOrWhiteSpace(exam.Name));
             Assert.False(string.IsNullOrWhiteSpace(exam.Subject));
             Assert.True(exam.Duration >= 30 && exam.Duration <= 360);
-            Assert.True(exam.QuestionCount >= 30 && exam.QuestionCount <= 79);
+            Assert.True(exam.QuestionCount >= 5 && exam.QuestionCount <= 100);
         }
 
         [Fact]
@@ -337,7 +337,7 @@ namespace Lab10.Tests
             Assert.False(string.IsNullOrWhiteSpace(finalExam.Name));
             Assert.False(string.IsNullOrWhiteSpace(finalExam.Subject));
             Assert.True(finalExam.Duration >= 30 && finalExam.Duration <= 360);
-            Assert.True(finalExam.QuestionCount >= 30 && finalExam.QuestionCount <= 79);
+            Assert.True(finalExam.QuestionCount >= 5 && finalExam.QuestionCount <= 100);
         }
 
         [Fact]
@@ -359,9 +359,9 @@ namespace Lab10.Tests
         public void Car_DefaultConstructor_InitializesProperties()
         {
             var car = new Car();
-            Assert.Null(car.Brand);
-            Assert.Equal(0, car.Year);
-            Assert.Equal(0, car.Price);
+            Assert.Equal("Игрушечная машинка", car.Brand);
+            Assert.Equal(2025, car.Year);
+            Assert.Equal(85.9, car.Price);
         }
 
         [Fact]

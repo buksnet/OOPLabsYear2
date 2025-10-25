@@ -43,7 +43,7 @@
         // Методы
         public void Init(string name, int duration, int questionCount, string subject, bool isStateExam)
         {
-            base.Init();
+            base.Init(name, duration, questionCount, subject);
             this.isStateExam = isStateExam;
         }
 
